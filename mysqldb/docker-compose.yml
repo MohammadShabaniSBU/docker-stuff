@@ -1,0 +1,22 @@
+version: "3.5"
+
+services:
+  mysqldb:
+    image: mysql:8
+    container_name: mysqldb
+    restart: always
+    volumes:
+      - ./database-data:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ROOT_HOST: "%"
+    ports:
+      - 3306:3306
+    networks:
+      - mysql-network
+
+networks:
+  mysql-network:
+    driver: bridge
+    name: mysql-network

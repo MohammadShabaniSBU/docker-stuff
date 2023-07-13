@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  mailhog:
+    image: mailhog/mailhog
+    container_name: mailhog
+    volumes:
+      - ./auth.txt:/home/mailhog/auth.txt
+    command: -auth-file /home/mailhog/auth.txt
+    ports: 
+      - 8025:8025
+    networks:
+      - mailhog
+
+networks:
+  mailhog:
+    driver: bridge
+    name: mailhog
