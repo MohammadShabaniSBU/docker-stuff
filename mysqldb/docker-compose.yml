@@ -3,7 +3,7 @@ version: "3.5"
 services:
   mysqldb:
     image: mysql:8
-    container_name: mysqldb
+    container_name: global_mysql
     restart: always
     volumes:
       - ./database-data:/var/lib/mysql
