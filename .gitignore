@@ -1,2 +1,4 @@
 yacht/yacht-data
 mysqldb/database-data
+portainer/data
+postgres/data

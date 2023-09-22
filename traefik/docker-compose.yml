@@ -4,9 +4,9 @@ services:
   reverse-proxy:
     container_name: global_traefik
     # The official v2 Traefik docker image
-    image: traefik:v2.9
+    image: traefik:v2.10
     # Enables the web UI and tells Traefik to listen to docker
-    command: --api.insecure=true --providers.docker
+    command: --api.insecure=true --providers.docker=true
     restart: always
     ports:
       # The HTTP port
